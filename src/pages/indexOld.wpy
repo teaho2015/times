@@ -1,10 +1,10 @@
 <template>
   <view class="page-index">
-    <!--<SearchBar :placeholder="searchText"></SearchBar>-->
-    <!--<Swiper :list.sync="swipers" height="280"></Swiper>-->
-    <!--<Category :list.sync="categorys" col="4"></Category>-->
-    <TimeList :list.sync="list" title="时间列表"
-     :loading.sync="loading" :noMore.sync="noMoreList"></TimeList>
+    <SearchBar :placeholder="searchText"></SearchBar>
+    <Swiper :list.sync="swipers" height="280"></Swiper>
+    <Category :list.sync="categorys" col="4"></Category>
+    <BookList :list.sync="list" title="图书列表"
+     :loading.sync="loading" :noMore.sync="noMoreList"></BookList>
   </view>
 </template>
 
@@ -14,10 +14,10 @@
   import base from '../mixins/base'
   import http from '../mixins/http'
   import { funImages } from '../mixins/demo'
-//  import Swiper from '../components/swiper'
-  //  import SearchBar from '../components/searchbar'
-  //  import Category from '../components/category'
-  import TimeList from '../components/timeList'
+  import Swiper from '../components/swiper'
+  import SearchBar from '../components/searchbar'
+  import Category from '../components/category'
+  import BookList from '../components/bookList'
 
   export default class pageIndex extends wepy.page {
     mixins = [base, http]
@@ -149,10 +149,10 @@
     }
 
     components = {
-//      SearchBar,
-//      Category,
-      TimeList,
-//      Swiper
+      SearchBar,
+      Category,
+      BookList,
+      Swiper
     }
   }
 </script>
