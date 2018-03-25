@@ -4,50 +4,7 @@
     <block wx:if="{{list.length > 0}}">
       <block wx:for="{{list}}" wx:key="index">
         <navigator url="/pages/main/detail?id={{item.id}}&title={{item.title}}&status={{item.status}}" class="booklist-item clearfix">
-          <view class="booklist-cover-wrapper">
-            <image src="{{item.image}}" mode="widthFix" style="width:100%;" />
-          </view>
-          <view class="booklist-content-wrapper">
-            <view class="booklist-title">{{item.title}}</view>
-            <view class="booklist-abstract">{{item.content}}</view>
-            <view wx:if="{{isCollectList}}" class="booklist-tags">
 
-              <block wx:if="{{item.status == '1'}}">
-                <image src="{{icon_eye_active}}" class="imgicon" mode="aspectFit"/>
-                <text class="booklist-text color-blue">可借阅</text>
-              </block>
-              <block wx:else>
-                <image src="{{icon_eye}}" class="imgicon" mode="aspectFit"/>
-                <text class="booklist-text color-bbb">已借完</text>
-              </block>
-
-              <view @tap.stop="toStar({{item}}, {{index}})" class="booklist-status">
-                <block wx:if="{{item.collected == 1}}">
-                  <image class="imgicon" src="{{icon_star_active}}" mode="aspectFit"/>
-                  <text class="booklist-text reset-text-star color-999">已收藏</text>
-                </block><block wx:else>
-                  <image class="imgicon" src="{{icon_star}}" mode="aspectFit"/>
-                  <text class="booklist-text reset-text-star color-blue">收藏</text>
-                </block>
-              </view>
-
-            </view>
-            <view wx:else class="booklist-tags">
-              <block wx:for="{{item.tags}}" wx:key="index" wx:for-item="tag">
-                <view class="booklist-tag">{{tag}}</view>
-              </block>
-              <view class="booklist-status">
-                <block wx:if="{{item.status == '1'}}">
-                  <image src="{{icon_eye_active}}" class="imgicon" mode="aspectFit"/>
-                  <text class="booklist-text color-blue">可借阅</text>
-                </block>
-                <block wx:else>
-                  <image src="{{icon_eye}}" class="imgicon" mode="aspectFit"/>
-                  <text class="booklist-text color-bbb">已借完</text>
-                </block>
-              </view>
-            </view>
-          </view>
         </navigator>
       </block>
       <block wx:if="{{loading}}">
@@ -64,7 +21,7 @@
     </block>
     <block wx:else>
       <view class="weui-loadmore weui-loadmore_line">
-        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无书籍</view>
+        <view class="weui-loadmore__tips weui-loadmore__tips_in-line">暂无数据</view>
       </view>
     </block>
   </view>
