@@ -33,7 +33,7 @@
   import http from '../mixins/http'
   import base from '../mixins/base'
 
-  export default class BookList extends wepy.component {
+  export default class TimeList extends wepy.component {
     mixins = [base, http]
     props = {
       list: {
