@@ -47,7 +47,7 @@
     }
 
     onReady() {
-      this.initPageData(this.page)
+      this.initPageData(this.time)
     }
 
     onPullDownRefresh() {
@@ -56,7 +56,7 @@
 
     onReachBottom() {
       setTimeout(() => {
-        this.updateBookList(this.page)
+        this.updateBookList(this.time)
         this.$apply()
       }, 200)
     }
@@ -82,12 +82,12 @@
     // 初始化页面数据
     initPageData() {
       // 初始化参数
-      this.page = 0
+      this.time = 0
       this.loading = false
       this.noMoreList = false
 
       // 请求推荐列表
-      this.updateBookList(this.page)
+      this.updateBookList(this.time)
     }
 
     // 更新图书列表
@@ -99,7 +99,7 @@
         url: service.list,
         data: Object.assign({}, this.getObject(this.params), {
           // 默认从0开始为第一页
-          page: page,
+          time: page,
           size: this.size
         })
       }, {
@@ -114,7 +114,7 @@
           if (this.isArray(data) && data.length === 0) {
             this.noMoreList = true
           }
-          if (!this.page || +this.page === 0) {
+          if (!this.time || +this.time === 0) {
             this.list = this.getBooks(data)
           } else {
             // 添加到列表中
@@ -124,10 +124,10 @@
             ]
           }
           // 成功了就增加一页
-          this.page += 1
+          this.time += 1
         },
         fail: ({code, data}) => {
-          console.log('[updateBookList fail]', code, data)
+          console.log('[updateTimeList fail]', code, data)
         },
         complete: () => {
           this.loading = false
