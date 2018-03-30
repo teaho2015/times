@@ -24,14 +24,16 @@ export default class extends wepy.app {
     window: {
       navigationBarTitleText: 'BookMall',
       navigationBarTextStyle: 'white',
-      navigationBarBackgroundColor: '#049BFF',
+//      navigationBarBackgroundColor: '#049BFF',
+
+      navigationBarBackgroundColor: '#3d2b1f',
       backgroundColor: '#eaeaea',
       backgroundTextStyle: 'light',
       enablePullDownRefresh: true
     },
     tabBar: {
       color: '#AEADAD',
-      selectedColor: '#049BFF',
+      selectedColor: '#3d2b1f',
       backgroundColor: '#fff',
       borderStyle: 'black',
       list: [{
@@ -100,6 +102,8 @@ export default class extends wepy.app {
     console.info(`[${obj ? 'UPDATE' : 'GET'} GlobalData ${name}]:`, this.globalData[name])
     return this.globalData[name]
   }
+
+
 }
 </script>
 

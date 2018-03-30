@@ -103,7 +103,7 @@
           this.getBorrow(this.getArray(data))
         },
         fail: ({code, data}) => {
-          console.log('[updateBookList fail]', code, data)
+          console.log('[updateTimeList fail]', code, data)
         }
       })
     }

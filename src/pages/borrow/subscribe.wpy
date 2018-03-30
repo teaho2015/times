@@ -1,6 +1,6 @@
 <template>
   <view class="borrow-subscribe">
-    
+
     <view class="weui-cells weui-cells_after-title borrow-address">
       <view class="weui-cell block">
         <view class="weui-media-box__title h4 color-666">订阅时长</view>

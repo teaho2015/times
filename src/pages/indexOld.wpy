@@ -42,7 +42,7 @@
       noMoreList: false,
       loading: false,
       list: [],
-      page: 0,
+      time: 0,
       size: 5
     }
 
@@ -56,7 +56,7 @@
 
     onReachBottom() {
       setTimeout(() => {
-        this.updateBookList(this.page)
+        this.updateBookList(this.time)
         this.$apply()
       }, 200)
     }
@@ -64,10 +64,10 @@
     // 初始化页面数据
     initPageData() {
       // 初始化参数
-      this.page = 0
+      this.time = 0
 
       // 请求列表
-      this.updateBookList(this.page)
+      this.updateBookList(this.time)
 
       // 处理轮播图
       this.swipers.push({image: '/images/swiper.png'})
@@ -107,7 +107,7 @@
             this.noMoreList = true
             return
           }
-          if (!this.page || +this.page === 0) {
+          if (!this.time || +this.time === 0) {
             this.list = this.getBooks(data)
           } else {
             // 添加到列表中
@@ -117,7 +117,7 @@
             ]
           }
           // 成功了就增加一页
-          this.page += 1
+          this.time += 1
         },
         fail: ({code, data}) => {
           // 失败了什么也不做
