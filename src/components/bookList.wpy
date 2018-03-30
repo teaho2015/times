@@ -14,7 +14,7 @@
 
               <block wx:if="{{item.status == '1'}}">
                 <image src="{{icon_eye_active}}" class="imgicon" mode="aspectFit"/>
-                <text class="booklist-text color-blue">可借阅</text>
+                <text class="booklist-text color-black">可借阅</text>
               </block>
               <block wx:else>
                 <image src="{{icon_eye}}" class="imgicon" mode="aspectFit"/>
@@ -27,7 +27,7 @@
                   <text class="booklist-text reset-text-star color-999">已收藏</text>
                 </block><block wx:else>
                   <image class="imgicon" src="{{icon_star}}" mode="aspectFit"/>
-                  <text class="booklist-text reset-text-star color-blue">收藏</text>
+                  <text class="booklist-text reset-text-star color-black">收藏</text>
                 </block>
               </view>
 
@@ -39,7 +39,7 @@
               <view class="booklist-status">
                 <block wx:if="{{item.status == '1'}}">
                   <image src="{{icon_eye_active}}" class="imgicon" mode="aspectFit"/>
-                  <text class="booklist-text color-blue">可借阅</text>
+                  <text class="booklist-text color-black">可借阅</text>
                 </block>
                 <block wx:else>
                   <image src="{{icon_eye}}" class="imgicon" mode="aspectFit"/>

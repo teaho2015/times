@@ -25,6 +25,7 @@
       </view>
     </block>
   </view>
+
 </template>
 
 <script>
@@ -225,4 +226,6 @@
 .booklist-text{
   padding-left: 0.3em;
 }
+
+
 </style>
