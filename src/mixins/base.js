@@ -114,4 +114,9 @@ export default class baseMixin extends wepy.mixin {
       showCancel: false
     }, param))
   }
+
+
+  
+
+
 }
